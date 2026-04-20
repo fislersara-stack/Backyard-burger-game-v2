@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Good Burger: Backyard Rush</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="start-screen" class="screen active card">
+      <div class="logo-wrap">
+        <div class="logo-burger" aria-hidden="true">
+          <span class="bun top"></span>
+          <span class="lettuce"></span>
+          <span class="patty"></span>
+          <span class="cheese"></span>
+          <span class="bun bottom"></span>
+        </div>
+        <h1>Good Burger:<br />Backyard Rush</h1>
+      </div>
+      <p class="tagline">Build the burger before your real one hits the table.</p>
+      <div class="rules">
+        <p>Tap the ingredients in the right order.</p>
+        <p>Match the ticket exactly.</p>
+        <p>You have <strong>45 seconds</strong>.</p>
+      </div>
+      <button id="start-btn" class="btn primary">Start Rush</button>
+    </section>
+
+    <section id="game-screen" class="screen">
+      <header class="hud card">
+        <div>
+          <span class="label">Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="label">Time</span>
+          <strong id="timer">45</strong>
+        </div>
+        <div>
+          <span class="label">Round</span>
+          <strong id="round">1</strong>
+        </div>
+      </header>
+
+      <section class="ticket-area card">
+        <div class="ticket-top">
+          <h2 id="order-name">Backyard Burger</h2>
+          <button id="new-order-btn" class="btn ghost" type="button">Skip</button>
+        </div>
+        <p class="ticket-note">Build it in this order:</p>
+        <ol id="order-list" class="ticket-list"></ol>
+      </section>
+
+      <section class="builder card">
+        <h3>Your Burger</h3>
+        <div id="burger-preview" class="burger-preview" aria-label="Burger preview"></div>
+        <div class="builder-actions">
+          <button id="undo-btn" class="btn" type="button">Undo</button>
+          <button id="clear-btn" class="btn" type="button">Clear</button>
+          <button id="serve-btn" class="btn primary" type="button">Serve</button>
+        </div>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section class="ingredients card">
+        <h3>Ingredients</h3>
+        <div id="ingredient-buttons" class="ingredient-grid"></div>
+      </section>
+    </section>
+
+    <section id="game-over-screen" class="screen card">
+      <h2>Rush Over</h2>
+      <p class="final-line">You survived the line.</p>
+      <div class="final-score-wrap">
+        <span class="label">Final Score</span>
+        <strong id="final-score">0</strong>
+      </div>
+      <p id="final-message" class="tagline"></p>
+      <button id="restart-btn" class="btn primary">Play Again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
